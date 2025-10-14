@@ -1,0 +1,18 @@
+package Sort;
+
+public class MyMergeSort {
+	private int[] array;
+	private int[] tempMergArr;
+	private int[] lenght;
+
+	public static void main(String[] args) {
+		int[] inputArr = { 45, 23, 11, 89, 77, 98, 4, 28, 65, 23 };
+		MyMergeSort mms = new MyMergeSort();
+		mms.sort(inputArr);
+		for (int i : inputArr) {
+			System.out.println(i);
+			;
+			System.out.println(" ");
+		}
+	}
+}

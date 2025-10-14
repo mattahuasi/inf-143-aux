@@ -1,0 +1,52 @@
+package com.example.tercero;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+import android.widget.EditText;
+
+public class MainActivity extends Activity {
+	ArrayList<Integer> numeros = new ArrayList<Integer>();
+	int n;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+
+	public void btnGenerar(View v) {
+		// Obtenemos direcciones
+		EditText p = (EditText) findViewById(R.id.edtNumero);
+		EditText q = (EditText) findViewById(R.id.edtResultado);
+
+		// Obtiene número
+		int n = Integer.parseInt(p.getText().toString());
+		Random rand = new Random();
+		for (int i = 1; i <= n; i++)
+			numeros.add(rand.nextInt(100));
+
+		// Salida
+		String s = "";
+		for (int i = 1; i <= n; i++)
+			s = s + numeros.get(i) + "\n";
+		q.setText(s);
+	}
+
+	public void btnOrdenar(View v) {
+		// Obtenemos direcciones
+		EditText q = (EditText) findViewById(R.id.edtResultado);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+}

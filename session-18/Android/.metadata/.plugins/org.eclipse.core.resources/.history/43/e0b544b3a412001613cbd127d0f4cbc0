@@ -1,0 +1,11 @@
+package Sort;
+
+public class Main {
+	private int[] array;
+	private int[] tempMergArr;
+	private int[] lenght;
+
+	public static void main(String[] args) {
+
+	}
+}
